@@ -10,18 +10,23 @@ def trapezio(a, b, s):
 	y = f(x)
 
 	# print what is going on
-	for i in range(n+1):
+	for i in range(s+1):
 		print "%5d %10.4f %10.4f" % (i, x[i], y[i])
 
-	integral = y[0] + 2.0 * sum( y[1:n] ) + y[n]
+	soma = sum( y[1:s] )
+	
 	h = float( b - a ) / s
+
+	integral = y[0] + 2.0 * soma + y[s]
+
+	
 
 	return s * h / 2.0
 
 def main():
 	a = 1
 	b = 4
-	s = 6
+	s = 10
 
 	t = trapezio(a, b, s)
 
@@ -29,5 +34,3 @@ def main():
 
 
 main()
-
-
